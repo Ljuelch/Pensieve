@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feral Druid Leveling Guide - TBC Classic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        druid: {
+                            primary: '#FF7C0A',
+                            dark: '#1a1a1a',
+                            darker: '#0f0f0f',
+                            card: '#1f1f1f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+        .glow {
+            box-shadow: 0 0 20px rgba(255, 124, 10, 0.3);
+        }
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #FF7C0A;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 124, 10, 0.5);
+        }
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #FF7C0A;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 124, 10, 0.5);
+        }
+        .lang-btn {
+            background: transparent;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+        .lang-btn.active {
+            background: #FF7C0A;
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-100">
+
+<!-- Header -->
+<header class="bg-druid-darker border-b border-druid-primary/20 sticky top-0 z-50 backdrop-blur-sm">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-druid-primary rounded-full flex items-center justify-center text-2xl">
+                    🐾
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-druid-primary" data-i18n="header.title">Feral Druide Guide</h1>
+                    <p class="text-sm text-gray-400" data-i18n="header.subtitle">TBC Classic Leveling - Dual Spec Tank/DPS</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- Language Toggle -->
+                <div class="flex items-center space-x-2 bg-druid-card rounded-lg p-2">
+                    <button id="langDe" class="px-3 py-1 rounded transition-colors lang-btn active">
+                        🇩🇪 DE
+                    </button>
+                    <button id="langEn" class="px-3 py-1 rounded transition-colors lang-btn">
+                        🇬🇧 EN
+                    </button>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-gray-400" data-i18n="header.currentLevel">Aktuelles Level</div>
+                    <div id="currentLevelDisplay" class="text-3xl font-bold text-druid-primary">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+
+    <!-- Level Slider Section -->
+    <section class="bg-druid-card rounded-xl p-6 mb-8 glow">
+        <div class="mb-6">
+            <label class="block text-lg font-semibold mb-4 text-druid-primary">
+                Select Your Level
+            </label>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-400 w-8">1</span>
+                <input
+                        type="range"
+                        id="levelSlider"
+                        min="1"
+                        max="70"
+                        value="1"
+                        class="slider flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                >
+                <span class="text-sm text-gray-400 w-8">70</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leveling Strategy Alert -->
+    <div id="strategyAlert" class="hidden mb-8"></div>
+
+    <!-- Main Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+
+        <!-- Talents Section -->
+        <section class="bg-druid-card rounded-xl p-6 border border-gray-800">
+            <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+                <span class="mr-2">🌳</span> <span data-i18n="sections.talents">Talente</span>
+            </h2>
+            <div id="talentsContent" class="space-y-4">
+                <!-- Dynamic content -->
+            </div>
+        </section>
+
+        <!-- Rotation & Buffs Section -->
+        <section class="bg-druid-card rounded-xl p-6 border border-gray-800">
+            <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+                <span class="mr-2">⚔️</span> <span data-i18n="sections.rotation">Rotation & Buffs</span>
+            </h2>
+            <div id="rotationContent" class="space-y-4">
+                <!-- Dynamic content -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Tips Carousel Section -->
+    <section class="bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-700/50 rounded-xl p-6 mb-8">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-purple-400 flex items-center">
+                <span class="mr-2">💡</span> <span data-i18n="sections.tips">Pro Tips</span>
+            </h2>
+            <div class="flex items-center space-x-2">
+                <button id="prevTip" class="bg-purple-700 hover:bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors">
+                    ‹
+                </button>
+                <span id="tipCounter" class="text-sm text-gray-400">1 / 25</span>
+                <button id="nextTip" class="bg-purple-700 hover:bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors">
+                    ›
+                </button>
+            </div>
+        </div>
+        <div id="tipContent" class="bg-black/30 rounded-lg p-6 min-h-[120px]">
+            <!-- Dynamic tip content -->
+        </div>
+    </section>
+
+    <!-- Power Spikes Section -->
+    <section class="bg-druid-card rounded-xl p-6 mb-8 border border-gray-800">
+        <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+            <span class="mr-2">⚡</span> <span data-i18n="sections.powerSpikes">Power Spikes</span>
+        </h2>
+        <div id="powerSpikesContent" class="space-y-4">
+            <!-- Dynamic content -->
+        </div>
+    </section>
+
+    <!-- Class Quests Section -->
+    <section class="bg-druid-card rounded-xl p-6 mb-8 border border-gray-800">
+        <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+            <span class="mr-2">📜</span> <span data-i18n="sections.classQuests">Klassenquests</span>
+        </h2>
+        <div id="classQuestsContent">
+            <!-- Dynamic content -->
+        </div>
+    </section>
+
+    <!-- Bottom Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Gear & Items Section -->
+        <section class="bg-druid-card rounded-xl p-6 border border-gray-800">
+            <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+                <span class="mr-2">🎯</span> <span data-i18n="sections.gear">Ausrüstung & Items</span>
+            </h2>
+            <div id="gearContent" class="space-y-4">
+                <!-- Dynamic content -->
+            </div>
+        </section>
+
+        <!-- Professions Section -->
+        <section class="bg-druid-card rounded-xl p-6 border border-gray-800">
+            <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+                <span class="mr-2">🔨</span> <span data-i18n="sections.professions">Berufe</span>
+            </h2>
+            <div id="professionsContent" class="space-y-4">
+                <!-- Dynamic content -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Zone & Quests Section -->
+    <section class="bg-druid-card rounded-xl p-6 mt-8 border border-gray-800">
+        <h2 class="text-2xl font-bold mb-4 text-druid-primary flex items-center">
+            <span class="mr-2">🗺️</span> <span data-i18n="sections.zones">Gebiete & Quests</span>
+        </h2>
+        <div id="zonesContent" class="space-y-4">
+            <!-- Dynamic content -->
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-druid-darker border-t border-druid-primary/20 mt-12 py-6">
+    <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+        <p>Feral Druid Leveling Guide - TBC Classic Anniversary</p>
+        <p class="mt-2">Data compiled from Icy Veins, Wowhead, and community guides</p>
+    </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/data-i18n.js"></script>
+<script src="js/tips.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/tips-ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
