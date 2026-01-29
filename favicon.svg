@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="64" fill="#1a0f0a"/>
+  
+  <!-- Druid orange circle (left) -->
+  <circle cx="45" cy="64" r="35" fill="#FF7D0A"/>
+  
+  <!-- Mage blue circle (right) -->
+  <circle cx="83" cy="64" r="35" fill="#69CCF0"/>
+  
+  <!-- WoW text -->
+  <text x="64" y="72" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        text-anchor="middle" fill="#000000" stroke="#000000" stroke-width="3">WoW</text>
+  <text x="64" y="72" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        text-anchor="middle" fill="#ffffff">WoW</text>
+</svg>

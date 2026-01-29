@@ -3,7 +3,7 @@ window.translations = window.translations || {
     de: {
         header: {
             title: "Feral Druide Guide",
-            subtitle: "TBC Classic Leveling - Dual Spec Tank/DPS",
+            subtitle: "Classic Leveling",
             currentLevel: "Aktuelles Level"
         },
         sections: {
@@ -11,9 +11,11 @@ window.translations = window.translations || {
             rotation: "Rotation & Buffs",
             powerSpikes: "Power Spikes",
             classQuests: "Klassenquests",
-            gear: "Ausrüstung & Items",
+            gear: "Ausrüstung",
+            dungeons: "Dungeons",
             professions: "Berufe",
-            zones: "Gebiete & Quests",
+            zones: "Leveling Zonen",
+            strategy: "Strategie",
             tips: "Pro Tips"
         },
         talents: {
@@ -27,12 +29,15 @@ window.translations = window.translations || {
             opener: "Opener",
             rotation: "Rotation",
             keepActive: "Aktiv halten",
+            cooldowns: "Cooldowns",
             powershifting: "⚡ Powershifting"
         },
         classQuests: {
             availableNow: "🔔 Jetzt verfügbar",
             upcoming: "⏳ Bald verfügbar",
             completed: "✅ Alle Klassenquests abgeschlossen!",
+            allComplete: "Alle Klassenquests abgeschlossen",
+            noMore: "Keine weiteren Klassenquests verfügbar",
             duration: "Dauer",
             location: "Ort",
             cost: "Kosten",
@@ -59,14 +64,38 @@ window.translations = window.translations || {
             exclusive: "★ EXKLUSIV"
         },
         zones: {
+            current: "Aktuelle Zone",
+            next: "Nächste Zone",
+            levelRange: "Level-Bereich",
             recommended: "Empfohlene Gebiete",
             alliance: "Allianz",
             horde: "Horde",
             dungeons: "Dungeons"
         },
         powerSpikes: {
+            upcoming: "Anstehende",
+            recent: "Kürzlich",
             noMore: "🎉 Keine weiteren Power Spikes!",
             endgame: "Du hast das Endgame erreicht. Fokussiere dich auf Ausrüstung und Berufe!"
+        },
+        strategy: {
+            early: "Fokus auf Questen und erste Dungeons. Nutze deine Klassenquests!",
+            level10to20: "Mixe Questen mit Dungeon-Runs. Besorge dir gute Waffen!",
+            level20to40: "Farme wichtige Items und levle weiter. Hole dir dein Mount bei 40!",
+            level40to60: "Bereite dich auf TBC vor! Farme Gold und Materials.",
+            level60to70: "TBC Leveling! Nutze alle Quest-Rewards für schnelles Leveling.",
+            level70: "Endgame! Farm Pre-BiS Gear aus Heroics und spare Gold für Epic Flying!"
+        },
+        levelSummary: {
+            powerSpike: "Power Spike",
+            focus: "Fokus"
+        },
+        levelSlider: {
+            title: "Wähle dein Level",
+            bisMode: "BiS Modus (Level 70)"
+        },
+        bis: {
+            title: "🎯 Best in Slot Ausrüstung"
         },
         common: {
             level: "Level",
@@ -84,9 +113,11 @@ window.translations = window.translations || {
             rotation: "Rotation & Buffs",
             powerSpikes: "Power Spikes",
             classQuests: "Class Quests",
-            gear: "Gear & Items",
+            gear: "Gear",
+            dungeons: "Dungeons",
             professions: "Professions",
-            zones: "Zones & Quests",
+            zones: "Leveling Zones",
+            strategy: "Strategy",
             tips: "Pro Tips"
         },
         talents: {
@@ -100,12 +131,15 @@ window.translations = window.translations || {
             opener: "Opener",
             rotation: "Rotation",
             keepActive: "Keep Active",
+            cooldowns: "Cooldowns",
             powershifting: "⚡ Powershifting"
         },
         classQuests: {
             availableNow: "🔔 Available Now",
             upcoming: "⏳ Upcoming",
             completed: "✅ All class quests completed!",
+            allComplete: "All class quests completed",
+            noMore: "No more class quests available",
             duration: "Duration",
             location: "Location",
             cost: "Cost",
@@ -132,14 +166,38 @@ window.translations = window.translations || {
             exclusive: "★ EXCLUSIVE"
         },
         zones: {
+            current: "Current Zone",
+            next: "Next Zone",
+            levelRange: "Level Range",
             recommended: "Recommended Zones",
             alliance: "Alliance",
             horde: "Horde",
             dungeons: "Dungeons"
         },
         powerSpikes: {
+            upcoming: "Upcoming",
+            recent: "Recent",
             noMore: "🎉 No more major power spikes!",
             endgame: "You've reached endgame. Focus on gear and professions!"
+        },
+        strategy: {
+            early: "Focus on questing and first dungeons. Complete your class quests!",
+            level10to20: "Mix questing with dungeon runs. Get good weapons!",
+            level20to40: "Farm important items and keep leveling. Get your mount at 40!",
+            level40to60: "Prepare for TBC! Farm gold and materials.",
+            level60to70: "TBC Leveling! Use all quest rewards for fast leveling.",
+            level70: "Endgame! Farm Pre-BiS gear from Heroics and save gold for Epic Flying!"
+        },
+        levelSummary: {
+            powerSpike: "Power Spike",
+            focus: "Focus"
+        },
+        levelSlider: {
+            title: "Select Your Level",
+            bisMode: "BiS Mode (Level 70)"
+        },
+        bis: {
+            title: "🎯 Best in Slot Gear"
         },
         common: {
             level: "Level",

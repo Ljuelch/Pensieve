@@ -11,7 +11,7 @@ Interactive leveling guide for Feral Druids in WoW TBC Classic with German/Engli
 - 🔨 Profession recommendations
 
 ## 🚀 Live Demo
-Visit: [https://dein-username.github.io/feral-druid-leveling-guide/](https://dein-username.github.io/feral-druid-leveling-guide/)
+Visit: [https://Ljuelch.github.io/feral-druid-leveling-guide/](https://dein-username.github.io/feral-druid-leveling-guide/)
 
 ## 💻 Local Development
 1. Clone the repo
