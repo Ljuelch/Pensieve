@@ -92,7 +92,7 @@ window.translations = window.translations || {
         },
         levelSlider: {
             title: "Wähle dein Level",
-            bisMode: "BiS Modus (Level 70)"
+            bisMode: "BiS Modus (Level 60)"
         },
         bis: {
             title: "🎯 Best in Slot Ausrüstung"
@@ -194,7 +194,7 @@ window.translations = window.translations || {
         },
         levelSlider: {
             title: "Select Your Level",
-            bisMode: "BiS Mode (Level 70)"
+            bisMode: "BiS Mode (Level 60)"
         },
         bis: {
             title: "🎯 Best in Slot Gear"

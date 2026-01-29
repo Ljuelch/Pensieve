@@ -1,6 +1,6 @@
 // ========================================
-// CLASS MANAGER - FINAL FIX
-// Ensures data updates correctly on switch
+// CLASS MANAGER - FIXED FOR DRUID DPS + HEALER
+// Replace your current class-manager.js with this!
 // ========================================
 
 let currentClass = 'feral-druid';
@@ -43,27 +43,68 @@ function getClassGear() {
     return { weapons: [], gearSets: [], essentialItems: [] };
 }
 
+// 🔧 FIXED: Handle Druid's DPS + Healer structure
 function getClassBiS() {
     if (currentClass === 'frost-mage' && typeof frostMageBiS !== 'undefined') {
         return frostMageBiS;
     }
+
+    // 🆕 FERAL DRUID: Handle DPS + Healer structure
     if (typeof feralDruidBiS !== 'undefined') {
-        return feralDruidBiS;
+        // Check which spec is selected (default: dps)
+        const selectedSpec = window.selectedDruidSpec || 'dps';
+
+        // Return the selected spec's BiS data
+        if (selectedSpec === 'healer' && feralDruidBiS.healer) {
+            return feralDruidBiS.healer;
+        }
+
+        // Default: DPS
+        return feralDruidBiS.dps;
     }
-    return { dps: { preRaid: { items: [] } }, tank: { preRaid: { items: [] } } };
+
+    // Fallback
+    return { preRaid: { items: [] } };
+}
+
+// 🆕 NEW: Toggle Druid Spec (DPS vs Healer)
+function toggleDruidSpec(spec) {
+    window.selectedDruidSpec = spec;
+
+    // Update BiS view
+    if (typeof updateBiSView === 'function') {
+        updateBiSView();
+    }
+
+    // Update active button styling
+    const dpsBtn = document.getElementById('druidSpecDPS');
+    const healerBtn = document.getElementById('druidSpecHealer');
+
+    if (dpsBtn && healerBtn) {
+        if (spec === 'dps') {
+            dpsBtn.style.backgroundColor = 'var(--class-color)';
+            dpsBtn.style.color = 'white';
+            healerBtn.style.backgroundColor = 'rgba(255, 125, 10, 0.2)';
+            healerBtn.style.color = 'var(--class-color)';
+        } else {
+            dpsBtn.style.backgroundColor = 'rgba(255, 125, 10, 0.2)';
+            dpsBtn.style.color = 'var(--class-color)';
+            healerBtn.style.backgroundColor = 'var(--class-color)';
+            healerBtn.style.color = 'white';
+        }
+    }
 }
 
 function initClassSystem() {
-
     try {
         currentClass = 'feral-druid';
         currentClassData = getClassData();
-
         applyClassTheme(currentClass);
 
         // Make globally available
         window.currentClass = currentClass;
         window.currentClassData = currentClassData;
+        window.selectedDruidSpec = 'dps'; // 🆕 Default to DPS
 
     } catch (error) {
         console.error('❌ Error initializing class system:', error);
@@ -78,8 +119,8 @@ function applyClassTheme() {
 
     // Set CSS custom properties for the class color
     root.style.setProperty('--class-color', classInfo.color);
-    root.style.setProperty('--class-color-light', classInfo.color + '40'); // 40 = 25% opacity
-    root.style.setProperty('--class-color-dark', classInfo.color + '20'); // 20 = 12.5% opacity
+    root.style.setProperty('--class-color-light', classInfo.color + '40');
+    root.style.setProperty('--class-color-dark', classInfo.color + '20');
 
     // 🎨 SET BODY CLASS + BACKGROUND COLORS
     if (currentClass === 'frost-mage') {
@@ -187,7 +228,6 @@ function createClassSelector() {
 }
 
 function switchClass(classKey) {
-
     try {
         const classInfo = availableClasses[classKey];
         if (!classInfo) {
@@ -240,6 +280,7 @@ window.currentClassData = currentClassData;
 window.getClassData = getClassData;
 window.getClassGear = getClassGear;
 window.getClassBiS = getClassBiS;
+window.toggleDruidSpec = toggleDruidSpec; // 🆕 Export toggle function
 window.availableClasses = availableClasses;
 window.initClassSystem = initClassSystem;
 window.createClassSelector = createClassSelector;

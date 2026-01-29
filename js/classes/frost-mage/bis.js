@@ -1,51 +1,92 @@
 // ========================================
 // FROST MAGE - BiS DATA (Classic Level 60 Pre-Raid)
+// WITH INTEGRATED FARMING DETAILS
 // ========================================
 
 const frostMageBiS = {
     preRaid: {
         name: "Pre-Raid BiS (Level 60 - Classic)",
         nameEn: "Pre-Raid BiS (Level 60 - Classic)",
+        totalCost: "300-600g (wenn vom AH gekauft)",
+        totalCostEn: "300-600g (if bought from AH)",
+        totalTime: "40-80 Stunden (komplett farmen)",
+        totalTimeEn: "40-80 hours (full farm)",
         items: [
             {
                 slot: "Kopf",
                 slotEn: "Head",
-                name: "Circlet of Prophecy",
-                nameEn: "Circlet of Prophecy",
-                source: "Tier 1 - Onyxia's Lair",
-                sourceEn: "Tier 1 - Onyxia's Lair",
-                stats: "+20 Intellect, +12 Stamina, +14 Spirit, +20 Frost Spell Damage",
-                priority: "critical"
+                name: "Dreamweave Circlet",
+                nameEn: "Dreamweave Circlet",
+                source: "Schneiderei (300 skill) - Crafted",
+                sourceEn: "Tailoring (300 skill) - Crafted",
+                stats: "+14 Intellect, +12 Spirit, +22 Spell Damage",
+                priority: "high",
+                howToGet: "Auction House ODER craften",
+                howToGetEn: "Auction House OR craft",
+                dropChance: "N/A (Crafted)",
+                cost: "80-150g (AH) ODER 50g Materials",
+                costEn: "80-150g (AH) OR 50g Materials",
+                farmTime: "Sofort (AH) ODER 2h (craft)",
+                farmTimeEn: "Instant (AH) OR 2h (craft)",
+                farmGuide: "Buy from AH (cheapest!) OR craft with Tailoring 300. Materials: Dreamweave, Felcloth. Good Pre-Raid head until you get T1!",
+                farmGuideDe: "Vom AH kaufen (günstigster!) ODER mit Schneiderei 300 craften. Materialien: Dreamweave, Felcloth. Gutes Pre-Raid Helm bis du T1 hast!"
             },
             {
                 slot: "Hals",
                 slotEn: "Neck",
-                name: "Choker of the Fire Lord",
-                nameEn: "Choker of the Fire Lord",
-                source: "Ragnaros (Molten Core)",
-                sourceEn: "Ragnaros (Molten Core)",
-                stats: "+12 Intellect, +7 Stamina, +25 Spell Damage",
-                priority: "critical"
+                name: "Amulet of the Shifting Sands",
+                nameEn: "Amulet of the Shifting Sands",
+                source: "Quest: Scepter of the Shifting Sands",
+                sourceEn: "Quest: Scepter of the Shifting Sands",
+                stats: "+10 Intellect, +8 Stamina, +14 Spell Damage",
+                priority: "high",
+                howToGet: "AQ40 Opening Quest (Pre-event)",
+                howToGetEn: "AQ40 Opening Quest (Pre-event)",
+                dropChance: "N/A (Quest Reward)",
+                cost: "0g (Quest)",
+                costEn: "0g (Quest)",
+                farmTime: "Long quest chain",
+                farmTimeEn: "Long quest chain",
+                farmGuide: "Part of AQ40 opening event. Long quest chain. Alternative: Jin'do's Evil Eye (ZG) or craft Greenweave Circle.",
+                farmGuideDe: "Teil des AQ40 Opening Events. Lange Quest Chain. Alternative: Jin'do's Evil Eye (ZG) oder craft Greenweave Circle."
             },
             {
                 slot: "Schultern",
                 slotEn: "Shoulders",
-                name: "Mantle of the Blackwing Cabal",
-                nameEn: "Mantle of the Blackwing Cabal",
-                source: "Razorgore (Blackwing Lair)",
-                sourceEn: "Razorgore (Blackwing Lair)",
-                stats: "+18 Intellect, +10 Stamina, +23 Spell Damage",
-                priority: "high"
+                name: "Boreal Mantle",
+                nameEn: "Boreal Mantle",
+                source: "Scholomance (BoE Drop)",
+                sourceEn: "Scholomance (BoE Drop)",
+                stats: "+12 Intellect, +10 Spirit, +16 Spell Damage",
+                priority: "medium",
+                howToGet: "Scholomance Farm ODER AH",
+                howToGetEn: "Scholomance Farm OR AH",
+                dropChance: "Random BoE",
+                cost: "80-200g (AH) ODER 0g (Scholo)",
+                costEn: "80-200g (AH) OR 0g (Scholo)",
+                farmTime: "15-30 Scholo Runs ODER sofort (AH)",
+                farmTimeEn: "15-30 Scholo Runs OR instant (AH)",
+                farmGuide: "BoE world drop in Scholomance. Check AH daily! Farm Scholomance for multiple Pre-Raid items. Alternative: Sublime Shoulders (Stratholme).",
+                farmGuideDe: "BoE World Drop in Scholomance. Check AH täglich! Farme Scholomance für mehrere Pre-Raid Items. Alternative: Sublime Shoulders (Stratholme)."
             },
             {
                 slot: "Rücken",
                 slotEn: "Back",
-                name: "Cloak of the Brood Lord",
-                nameEn: "Cloak of the Brood Lord",
-                source: "Nefarian (Blackwing Lair)",
-                sourceEn: "Nefarian (Blackwing Lair)",
-                stats: "+15 Intellect, +10 Stamina, +19 Spell Damage",
-                priority: "high"
+                name: "Drape of Benediction",
+                nameEn: "Drape of Benediction",
+                source: "Jandice Barov (Scholomance)",
+                sourceEn: "Jandice Barov (Scholomance)",
+                stats: "+11 Intellect, +10 Spirit, +22 Spell Damage",
+                priority: "high",
+                howToGet: "Scholomance - Boss",
+                howToGetEn: "Scholomance - Boss",
+                dropChance: "~18%",
+                cost: "0g (Dungeon Drop, BoP)",
+                costEn: "0g (Dungeon Drop, BoP)",
+                farmTime: "10-15 Runs",
+                farmTimeEn: "10-15 Runs",
+                farmGuide: "Farm Scholomance! Boss: Jandice Barov (Illusionist). ~18% drop chance. BiS Pre-Raid cloak!",
+                farmGuideDe: "Farme Scholomance! Boss: Jandice Barov (Illusionistin). ~18% Drop Chance. BiS Pre-Raid Umhang!"
             },
             {
                 slot: "Brust",
@@ -55,7 +96,16 @@ const frostMageBiS = {
                 source: "Schneiderei (300 skill) - Crafted",
                 sourceEn: "Tailoring (300 skill) - Crafted",
                 stats: "+18 Intellect, +18 Stamina, +35 Spell Damage",
-                priority: "critical"
+                priority: "critical",
+                howToGet: "Auction House ODER selbst craften",
+                howToGetEn: "Auction House OR craft yourself",
+                dropChance: "N/A (Crafted)",
+                cost: "200-400g (AH) ODER 150g Materials",
+                costEn: "200-400g (AH) OR 150g Materials",
+                farmTime: "Sofort (AH) ODER 1 Woche (Mooncloth CD)",
+                farmTimeEn: "Instant (AH) OR 1 week (Mooncloth CD)",
+                farmGuide: "🔥 #1 PRIORITY! OPTION 1: Buy from AH (fastest, 200-400g). OPTION 2: Level Tailoring to 300, craft yourself. Needs 4x Mooncloth (1 per day = 4 days minimum!). Materials: Felcloth, Rugged Leather. BiS Pre-Raid chest!",
+                farmGuideDe: "🔥 #1 PRIORITÄT! OPTION 1: Vom AH kaufen (schnellster, 200-400g). OPTION 2: Schneiderei auf 300 leveln, selbst craften. Braucht 4x Mondstoff (1 pro Tag = 4 Tage minimum!). Materialien: Teufelsstoff, Robustes Leder. BiS Pre-Raid Brust!"
             },
             {
                 slot: "Armschienen",
@@ -65,7 +115,16 @@ const frostMageBiS = {
                 source: "Dire Maul Tribute Run",
                 sourceEn: "Dire Maul Tribute Run",
                 stats: "+14 Intellect, +7 Stamina, +14 Spell Damage",
-                priority: "medium"
+                priority: "medium",
+                howToGet: "Dire Maul North Tribute",
+                howToGetEn: "Dire Maul North Tribute",
+                dropChance: "~25% (from chest)",
+                cost: "0g (Dungeon)",
+                costEn: "0g (Dungeon)",
+                farmTime: "4-8 Runs",
+                farmTimeEn: "4-8 Runs",
+                farmGuide: "Dire Maul North Tribute Run (~30-45 min). Kill NO bosses! Run to Tribute chest. ~25% drop chance. Easy to farm!",
+                farmGuideDe: "Dire Maul Nord Tribute Run (~30-45 min). Töte KEINE Bosse! Lauf zur Tribute Truhe. ~25% Drop Chance. Einfach zu farmen!"
             },
             {
                 slot: "Hände",
@@ -75,17 +134,35 @@ const frostMageBiS = {
                 source: "General Drakkisath (UBRS)",
                 sourceEn: "General Drakkisath (UBRS)",
                 stats: "+13 Intellect, +10 Stamina, +20 Spell Damage",
-                priority: "high"
+                priority: "high",
+                howToGet: "UBRS - Last Boss",
+                howToGetEn: "UBRS - Last Boss",
+                dropChance: "~15%",
+                cost: "0g (Dungeon Drop, BoP)",
+                costEn: "0g (Dungeon Drop, BoP)",
+                farmTime: "10-25 Runs",
+                farmTimeEn: "10-25 Runs",
+                farmGuide: "🔥 Farm UBRS! Last Boss: General Drakkisath. ~45-60 min per run. ~15% drop chance. BiS Pre-Raid gloves! Same boss drops Briarwood Reed (trinket)!",
+                farmGuideDe: "🔥 Farme UBRS! Endboss: General Drakkisath. ~45-60 min pro Run. ~15% Drop Chance. BiS Pre-Raid Handschuhe! Selber Boss droppt Briarwood Reed (Trinket)!"
             },
             {
                 slot: "Gürtel",
                 slotEn: "Waist",
-                name: "Mana Igniting Cord",
-                nameEn: "Mana Igniting Cord",
-                source: "Trash (Molten Core)",
-                sourceEn: "Trash (Molten Core)",
-                stats: "+14 Intellect, +23 Spell Damage",
-                priority: "high"
+                name: "Clutch of Andros",
+                nameEn: "Clutch of Andros",
+                source: "Stratholme (BoE Drop)",
+                sourceEn: "Stratholme (BoE Drop)",
+                stats: "+12 Intellect, +9 Spirit, +18 Spell Damage",
+                priority: "medium",
+                howToGet: "Stratholme Farm ODER AH",
+                howToGetEn: "Stratholme Farm OR AH",
+                dropChance: "Random BoE",
+                cost: "60-150g (AH) ODER 0g (Strat)",
+                costEn: "60-150g (AH) OR 0g (Strat)",
+                farmTime: "15-25 Runs ODER sofort (AH)",
+                farmTimeEn: "15-25 Runs OR instant (AH)",
+                farmGuide: "BoE drop from Stratholme. Check AH daily! Farm Stratholme for multiple Pre-Raid items (Boots, Belt, etc).",
+                farmGuideDe: "BoE Drop von Stratholme. Check AH täglich! Farme Stratholme für mehrere Pre-Raid Items (Boots, Belt, etc)."
             },
             {
                 slot: "Beine",
@@ -95,7 +172,16 @@ const frostMageBiS = {
                 source: "Leatherworking (300 skill) - Crafted",
                 sourceEn: "Leatherworking (300 skill) - Crafted",
                 stats: "+27 Intellect, +23 Spell Damage, +10 Fire Resistance",
-                priority: "critical"
+                priority: "critical",
+                howToGet: "AH kaufen ODER craften",
+                howToGetEn: "Buy AH OR craft",
+                dropChance: "N/A (Crafted)",
+                cost: "150-300g (AH) ODER 100g Materials",
+                costEn: "150-300g (AH) OR 100g Materials",
+                farmTime: "Sofort (AH) ODER 3-5h (LW + farm)",
+                farmTimeEn: "Instant (AH) OR 3-5h (LW + farm)",
+                farmGuide: "Check AH first! Often cheaper than crafting. Materials: Dragon Scales (farm in Un'Goro/Burning Steppes), Core Leather (MC trash). BiS Pre-Raid legs!",
+                farmGuideDe: "Check AH zuerst! Oft günstiger als craften. Materialien: Drachenschuppen (farmen in Un'Goro/Burning Steppes), Kernleder (MC Trash). BiS Pre-Raid Beine!"
             },
             {
                 slot: "Füße",
@@ -105,57 +191,111 @@ const frostMageBiS = {
                 source: "Baron Rivendare (Stratholme)",
                 sourceEn: "Baron Rivendare (Stratholme)",
                 stats: "+13 Intellect, +12 Spirit, +7 Stamina",
-                priority: "medium"
+                priority: "high",
+                howToGet: "Stratholme Baron Run",
+                howToGetEn: "Stratholme Baron Run",
+                dropChance: "~8%",
+                cost: "0g (Dungeon Drop, BoP)",
+                costEn: "0g (Dungeon Drop, BoP)",
+                farmTime: "25-50 Runs",
+                farmTimeEn: "25-50 Runs",
+                farmGuide: "🔥 Farm Stratholme Baron runs (~45 min per run). Drop chance ~8%. BiS Pre-Raid boots! Can solo farm with good gear.",
+                farmGuideDe: "🔥 Farme Stratholme Baron Runs (~45 min pro Run). Drop Chance ~8%. BiS Pre-Raid Boots! Kann solo gefarmt werden mit gutem Gear."
             },
             {
                 slot: "Ring 1",
                 slotEn: "Ring 1",
-                name: "Ring of Spell Power",
-                nameEn: "Ring of Spell Power",
-                source: "Quest: Arcane Slivers (Azuregos)",
-                sourceEn: "Quest: Arcane Slivers (Azuregos)",
-                stats: "+18 Spell Damage, +12 Stamina",
-                priority: "critical"
+                name: "Freezing Band",
+                nameEn: "Freezing Band",
+                source: "Quest: Timolain (Stratholme)",
+                sourceEn: "Quest: Timolain (Stratholme)",
+                stats: "+10 Intellect, +10 Stamina, +14 Spell Damage, Frost",
+                priority: "critical",
+                howToGet: "Quest in Stratholme",
+                howToGetEn: "Quest in Stratholme",
+                dropChance: "N/A (Quest Reward)",
+                cost: "0g (Quest)",
+                costEn: "0g (Quest)",
+                farmTime: "1 Stratholme Run",
+                farmTimeEn: "1 Stratholme Run",
+                farmGuide: "🔥 Quest: 'Timolain's Phylactery' in Stratholme. Kill Timolain (rare spawn near Ramstein). Turn in phylactery. Guaranteed reward! BiS Pre-Raid ring for Frost Mage!",
+                farmGuideDe: "🔥 Quest: 'Timolain's Phylactery' in Stratholme. Töte Timolain (Rare Spawn bei Ramstein). Quest abgeben. Garantierter Reward! BiS Pre-Raid Ring für Frostmagier!"
             },
             {
                 slot: "Ring 2",
                 slotEn: "Ring 2",
-                name: "Pure Elementium Band",
-                nameEn: "Pure Elementium Band",
-                source: "Blacksmithing (300) - Crafted",
-                sourceEn: "Blacksmithing (300) - Crafted",
-                stats: "+14 Intellect, +14 Spell Damage",
-                priority: "high"
+                name: "Songstone of Ironforge",
+                nameEn: "Songstone of Ironforge",
+                source: "Quest: Barov Family Fortune",
+                sourceEn: "Quest: Barov Family Fortune",
+                stats: "+10 Intellect, +11 Spell Damage, +4 Spirit",
+                priority: "high",
+                howToGet: "Scholomance Quest Chain",
+                howToGetEn: "Scholomance Quest Chain",
+                dropChance: "N/A (Quest Reward)",
+                cost: "0g (Quest)",
+                costEn: "0g (Quest)",
+                farmTime: "Complete quest chain",
+                farmTimeEn: "Complete quest chain",
+                farmGuide: "Complete 'Barov Family Fortune' quest chain. Start in Scholomance, collect Barov deeds. Guaranteed reward! Alternative: Ring of Spell Power (Azuregos world boss).",
+                farmGuideDe: "Schließe 'Barov Family Fortune' Quest Chain ab. Start in Scholomance, sammle Barov Urkunden. Garantierter Reward! Alternative: Ring of Spell Power (Azuregos World Boss)."
             },
             {
                 slot: "Trinket 1",
                 slotEn: "Trinket 1",
-                name: "Talisman of Ephemeral Power",
-                nameEn: "Talisman of Ephemeral Power",
-                source: "Trash (Blackwing Lair)",
-                sourceEn: "Trash (Blackwing Lair)",
-                stats: "Use: +175 Spell Damage for 15 sec (1.5 min CD)",
-                priority: "critical"
-            },
-            {
-                slot: "Trinket 2",
-                slotEn: "Trinket 2",
                 name: "Briarwood Reed",
                 nameEn: "Briarwood Reed",
                 source: "Jed Runewatcher (UBRS)",
                 sourceEn: "Jed Runewatcher (UBRS)",
                 stats: "Equip: +29 Spell Damage",
-                priority: "high"
+                priority: "critical",
+                howToGet: "UBRS - Boss vor General",
+                howToGetEn: "UBRS - Boss before General",
+                dropChance: "~10%",
+                cost: "0g (Dungeon Drop, BoP)",
+                costEn: "0g (Dungeon Drop, BoP)",
+                farmTime: "15-30 Runs",
+                farmTimeEn: "15-30 Runs",
+                farmGuide: "🔥🔥🔥 #1 BiS TRINKET Pre-Raid! Farm UBRS! Boss: Jed Runewatcher (before General Drakkisath). ~10% drop chance. Farm together with Hands of Power (same dungeon)!",
+                farmGuideDe: "🔥🔥🔥 #1 BiS TRINKET Pre-Raid! Farme UBRS! Boss: Jed Runewatcher (vor General Drakkisath). ~10% Drop Chance. Farm zusammen mit Hands of Power (selbe Dungeon)!"
+            },
+            {
+                slot: "Trinket 2",
+                slotEn: "Trinket 2",
+                name: "Royal Seal of Eldre'Thalas",
+                nameEn: "Royal Seal of Eldre'Thalas",
+                source: "Dire Maul Tribute (all chests)",
+                sourceEn: "Dire Maul Tribute (all chests)",
+                stats: "+10 Intellect, +10 Stamina, +1% Spell Crit",
+                priority: "high",
+                howToGet: "Dire Maul North Tribute",
+                howToGetEn: "Dire Maul North Tribute",
+                dropChance: "~15%",
+                cost: "0g (Dungeon)",
+                costEn: "0g (Dungeon)",
+                farmTime: "10-20 Runs",
+                farmTimeEn: "10-20 Runs",
+                farmGuide: "Dire Maul North Tribute Run. Kill NO bosses! Open tribute chests. ~15% drop. Solid trinket! Farm together with Sublime Wristguards!",
+                farmGuideDe: "Dire Maul Nord Tribute Run. Töte KEINE Bosse! Öffne Tribute Truhen. ~15% Drop. Solides Trinket! Farm zusammen mit Sublime Wristguards!"
             },
             {
                 slot: "Waffe",
                 slotEn: "Weapon",
-                name: "Staff of Dominance",
-                nameEn: "Staff of Dominance",
-                source: "Prince Thunderaan (Thunderfury Quest)",
-                sourceEn: "Prince Thunderaan (Thunderfury Quest)",
-                stats: "+33 Spell Damage, +15 Intellect, +9 Stamina",
-                priority: "critical"
+                name: "Blade of the New Moon",
+                nameEn: "Blade of the New Moon",
+                source: "General Drakkisath (UBRS)",
+                sourceEn: "General Drakkisath (UBRS)",
+                stats: "+10 Intellect, +10 Spirit, +26 Spell Damage",
+                priority: "critical",
+                howToGet: "UBRS - Last Boss",
+                howToGetEn: "UBRS - Last Boss",
+                dropChance: "~12%",
+                cost: "0g (Dungeon Drop, BoP)",
+                costEn: "0g (Dungeon Drop, BoP)",
+                farmTime: "15-30 Runs",
+                farmTimeEn: "15-30 Runs",
+                farmGuide: "🔥 BiS Pre-Raid Weapon! Farm UBRS! Last Boss: General Drakkisath. ~12% drop. Same boss drops: Hands of Power, Briarwood Reed, Blackhand's Breadth!",
+                farmGuideDe: "🔥 BiS Pre-Raid Waffe! Farme UBRS! Endboss: General Drakkisath. ~12% Drop. Selber Boss droppt: Hands of Power, Briarwood Reed, Blackhand's Breadth!"
             },
             {
                 slot: "Zauberstab",
@@ -165,85 +305,19 @@ const frostMageBiS = {
                 source: "Dire Maul Tribute Run",
                 sourceEn: "Dire Maul Tribute Run",
                 stats: "51-95 Shadow Damage",
-                priority: "high"
+                priority: "high",
+                howToGet: "Dire Maul North Tribute",
+                howToGetEn: "Dire Maul North Tribute",
+                dropChance: "~20%",
+                cost: "0g (Dungeon)",
+                costEn: "0g (Dungeon)",
+                farmTime: "5-10 Runs",
+                farmTimeEn: "5-10 Runs",
+                farmGuide: "Dire Maul North Tribute Run. Same run as Sublime Wristguards! ~20% drop from chest. BiS Pre-Raid wand!",
+                farmGuideDe: "Dire Maul Nord Tribute Run. Selber Run wie Sublime Wristguards! ~20% Drop von Truhe. BiS Pre-Raid Zauberstab!"
             }
         ],
-        totalStats: "+450 Spell Damage, +250 Intellect, +150 Stamina (ohne Verzauberungen)",
-        notes: "Mix aus UBRS, Dire Maul, Molten Core und crafted Items. Focus auf Spell Damage!"
+        totalStats: "+350 Spell Damage, +180 Intellect, +120 Stamina (ohne Verzauberungen)",
+        notes: "UBRS, Stratholme, Scholomance, Dire Maul + Crafted Items. Focus auf Spell Damage! Keine Raids nötig!"
     }
 };
-
-// BiS Farming Priority Steps
-const frostMageBiSFarmingSteps = [
-    {
-        step: 1,
-        priority: "critical",
-        icon: "🔥",
-        title: "Robe of the Archmage (Chest)",
-        tasks: [
-            "Level Tailoring to 300 OR buy from AH",
-            "Materials: Felcloth, Mooncloth, Rugged Leather",
-            "BiS Pre-Raid Chest!"
-        ],
-        time: "Instant if bought, 1 week if crafting Mooncloth",
-        dungeon: "N/A (Crafted gear)",
-        notes: "🔥 #1 PRIORITY! Best Pre-Raid chest!"
-    },
-    {
-        step: 2,
-        priority: "critical",
-        icon: "🔥",
-        title: "Hands of Power (Gloves)",
-        tasks: [
-            "Farm UBRS",
-            "Kill General Drakkisath",
-            "~15% drop chance"
-        ],
-        time: "5-15 runs",
-        dungeon: "Upper Blackrock Spire (UBRS)",
-        notes: "🔥 Best Pre-Raid Gloves! Farm UBRS weekly"
-    },
-    {
-        step: 3,
-        priority: "critical",
-        icon: "🔥",
-        title: "Talisman of Ephemeral Power (Trinket)",
-        tasks: [
-            "Farm Blackwing Lair trash mobs",
-            "World drop from BWL",
-            "Very rare!"
-        ],
-        time: "RNG dependent (weeks)",
-        dungeon: "Blackwing Lair",
-        notes: "🔥 BiS Trinket! +175 Spell Damage on use!"
-    },
-    {
-        step: 4,
-        priority: "high",
-        icon: "⚙️",
-        title: "Salamander Scale Pants (Legs)",
-        tasks: [
-            "Get Leatherworking 300 OR buy from AH",
-            "Materials: Scales from Dragons, Core Leather",
-            "Excellent Pre-Raid legs!"
-        ],
-        time: "Instant if bought",
-        dungeon: "N/A (Crafted)",
-        notes: "Cheaper alternative to T1 legs"
-    },
-    {
-        step: 5,
-        priority: "high",
-        icon: "🎯",
-        title: "Farm Key Dungeons",
-        tasks: [
-            "🔥 UBRS: Hands of Power, Briarwood Reed (Jed)",
-            "🔥 Stratholme: Boots of Pure Thought (Baron)",
-            "🔥 Dire Maul: Sublime Wristguards, Lunar Wand (Tribute)",
-            "📦 Scholomance: Various caster items"
-        ],
-        time: "10-20 runs per item",
-        dungeon: "UBRS, Strat, Dire Maul, Scholo",
-        notes: "Focus on UBRS and Dire Maul first!"
-    }
-];

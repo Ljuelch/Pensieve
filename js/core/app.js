@@ -49,10 +49,19 @@ function getClassBiSData() {
     if (window.currentClass === 'frost-mage' && typeof frostMageBiS !== 'undefined') {
         return frostMageBiS;
     }
+
+    // 🆕 FERAL DRUID: Handle DPS + Healer structure
     if (typeof feralDruidBiS !== 'undefined') {
-        return feralDruidBiS;
+        const selectedSpec = window.selectedDruidSpec || 'dps';
+
+        if (selectedSpec === 'healer' && feralDruidBiS.healer) {
+            return feralDruidBiS.healer;
+        }
+
+        return feralDruidBiS.dps;
     }
-    return { dps: { preRaid: { items: [] } }, tank: { preRaid: { items: [] } } };
+
+    return { preRaid: { items: [] } };
 }
 
 // ========================================
@@ -990,15 +999,62 @@ function updateBiSView() {
                 <h3 class="text-2xl font-bold text-purple-400 mb-4">${td(bisData.preRaid.name)}</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     ${bisData.preRaid.items.map(item => `
-                        <div class="bg-gray-800/50 border border-purple-700/50 rounded-lg p-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="text-purple-300 font-semibold">${td(item.slot)}</span>
-                            </div>
-                            <p class="text-green-400 font-bold">${td(item.name)}</p>
-                            <p class="text-sm text-gray-400 mt-1">${td(item.source)}</p>
-                            <p class="text-xs text-gray-500 mt-2">${item.stats}</p>
-                        </div>
-                    `).join('')}
+    <div class="bg-gray-800/50 border border-purple-700/50 rounded-lg p-4 hover:border-purple-500 transition-all cursor-pointer" 
+         onclick="toggleFarmingDetails('${item.slot}')">
+        
+        <!-- Item Header -->
+        <div class="flex justify-between items-start mb-2">
+            <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold">${td(item.slot)}</span>
+                ${item.priority === 'critical' ? '<span class="text-xs px-2 py-1 bg-red-600 rounded">🔥 MUST HAVE</span>' : ''}
+            </div>
+            <button class="text-gray-400 hover:text-white text-xs">
+                📋 Details
+            </button>
+        </div>
+        
+        <!-- Item Name & Stats -->
+        <p class="text-green-400 font-bold text-lg">${td(item.name)}</p>
+        <p class="text-sm text-gray-400 mt-1">${td(item.source)}</p>
+        <p class="text-xs text-gray-500 mt-2">${item.stats}</p>
+        
+        <!-- Farming Quick Info (always visible) -->
+        <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-black/30 rounded px-2 py-1">
+                <span class="text-yellow-400">💰 Cost:</span>
+                <span class="text-gray-300 ml-1">${item.cost || item.costEn}</span>
+            </div>
+            <div class="bg-black/30 rounded px-2 py-1">
+                <span class="text-blue-400">⏱️ Time:</span>
+                <span class="text-gray-300 ml-1">${item.farmTime || item.farmTimeEn}</span>
+            </div>
+        </div>
+        
+        <!-- Expandable Farming Details (click to show) -->
+        <div id="farming-${item.slot}" class="hidden mt-3 border-t border-gray-700 pt-3">
+            <div class="space-y-2 text-sm">
+                <div>
+                    <span class="text-purple-400 font-semibold">📍 How to Get:</span>
+                    <p class="text-gray-300 mt-1">${item.howToGet || item.howToGetEn}</p>
+                </div>
+                
+                ${item.dropChance ? `
+                    <div>
+                        <span class="text-green-400 font-semibold">🎲 Drop Chance:</span>
+                        <span class="text-gray-300 ml-2">${item.dropChance}</span>
+                    </div>
+                ` : ''}
+                
+                <div class="bg-blue-900/20 border border-blue-700/50 rounded p-3 mt-2">
+                    <p class="text-blue-300 text-xs">
+                        <span class="font-bold">💡 Farming Guide:</span><br>
+                        ${item.farmGuide || item.farmGuideDe}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+`).join('')}
                 </div>
                 ${bisData.preRaid.totalStats ? `
                     <div class="mt-4 p-4 bg-green-900/20 border border-green-700/50 rounded-lg">
@@ -1052,7 +1108,7 @@ function toggleBiSMode() {
         bisView.classList.remove('hidden');
         bisToggle.classList.add('bg-druid-primary');
         bisToggle.classList.remove('bg-purple-600');
-        currentLevel = 70;
+        currentLevel = 60;
         updateBiSView();
     } else {
         levelingView.classList.remove('hidden');
