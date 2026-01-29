@@ -992,6 +992,28 @@ function updateBiSView() {
 
     let html = '';
 
+    if (window.currentClass === 'feral-druid') {
+        const selectedSpec = window.selectedDruidSpec || 'dps';
+        html += `
+            <div class="mb-6 flex items-center justify-center gap-3">
+                <button id="druidSpecDPS" 
+                        onclick="toggleDruidSpec('dps')" 
+                        class="px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:scale-105"
+                        style="background-color: ${selectedSpec === 'dps' ? 'var(--class-color)' : 'rgba(255, 125, 10, 0.2)'}; 
+                               color: ${selectedSpec === 'dps' ? 'white' : 'var(--class-color)'};">
+                    🐱 Feral DPS (Cat Form)
+                </button>
+                <button id="druidSpecHealer" 
+                        onclick="toggleDruidSpec('healer')" 
+                        class="px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:scale-105"
+                        style="background-color: ${selectedSpec === 'healer' ? 'var(--class-color)' : 'rgba(255, 125, 10, 0.2)'}; 
+                               color: ${selectedSpec === 'healer' ? 'white' : 'var(--class-color)'};">
+                    🌿 Restoration (Healer)
+                </button>
+            </div>
+        `;
+    }
+
     // Check structure
     if (bisData.preRaid && bisData.preRaid.items && Array.isArray(bisData.preRaid.items)) {
         html += `
@@ -1120,6 +1142,20 @@ function toggleBiSMode() {
     }
 
     document.getElementById('currentLevelDisplay').textContent = currentLevel;
+}
+
+// Toggle Druid Spec
+function toggleDruidSpec(spec) {
+    window.selectedDruidSpec = spec;
+    updateBiSView();
+}
+
+// Toggle Farming Details (für expandable items)
+function toggleFarmingDetails(slotId) {
+    const detailsDiv = document.getElementById('farming-' + slotId);
+    if (detailsDiv) {
+        detailsDiv.classList.toggle('hidden');
+    }
 }
 
 // ========================================
